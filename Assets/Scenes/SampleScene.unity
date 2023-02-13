@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1902,6 +1902,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804468133}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &909965305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7861067270051471599, guid: 254d641c3d5a8be46978b0ead7e1819f, type: 3}
+  m_PrefabInstance: {fileID: 574654117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &909965306
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909965305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.50000024
+  m_Height: 2.0000005
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0.0000038146973, z: -0.00000014901164}
 --- !u!1 &953150157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,9 +4069,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034c6a7f4ed37e346a829785210067eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0
-  chargeSpeed: 5
   objectToSpawn: {fileID: 6408664721820801768, guid: 707765fbd2c718b4da5d0186c8c96c3c, type: 3}
+  bullet: {fileID: 0}
+  timer: 0
+  bulletComp: {fileID: 0}
 --- !u!114 &6926889646644216970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4065,8 +4085,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d4a26a498d7c94fa7add24f0f27792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  chargeSpeed: 5
-  timer: 0
-  charging: 0
-  power: 0
+  force: 0

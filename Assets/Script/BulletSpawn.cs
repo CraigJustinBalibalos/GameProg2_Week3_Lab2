@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class BulletSpawn : MonoBehaviour
 {
-    public static BulletSpawn Instance { get; private set; }
-    public float force;
-    public float chargeSpeed = 3;
+    // public static BulletSpawn Instance { get; private set; }
     public GameObject objectToSpawn;
-    private void Awake()
-    {
-        Instance = this;
-    }
+    public GameObject bullet;
+    public float timer; 
+    public BulletComponent bulletComp;
+    // private void Awake()
+    // {
+    //     Instance = this;
+    // }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +23,19 @@ public class BulletSpawn : MonoBehaviour
     public void Update()
     {
         if (Input.GetButton("Fire1")){
-            force += chargeSpeed*Time.deltaTime;   
+            timer += Time.deltaTime; 
         }
-        // if (Input.GetButtonDown("Fire1")){
-        //     GetComponent<BulletComponent>().enabled = false; 
-        // }
+
         if (Input.GetButtonUp("Fire1")){
-            Debug.Log("FIRE!!!");
-            Instantiate(objectToSpawn, transform.position, transform.rotation);
-            force = 0;
+
+        bullet = Instantiate(objectToSpawn, transform.position, transform.rotation);
+        bulletComp = bullet.GetComponent<BulletComponent>(); 
+
+        if (bullet != null)
+        {
+            bulletComp.force = timer*30;
+            timer = 0;
+        }
 
         }
     }
